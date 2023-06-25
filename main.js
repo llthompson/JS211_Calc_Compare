@@ -5,6 +5,9 @@
 //          PART ONE
 // ***************************
 // Write a JavaScript program to display the current day and time, start with:
+
+// date and time 
+
 console.log(new Date)
 
 const displayDate = () => {
@@ -12,13 +15,69 @@ const displayDate = () => {
 
   document.getElementById("display-element").innerHTML = currentDate;
 }
- 
+
 
 // Write a JavaScript program to convert a number to a string.
-
+const numberToString = num => String(num);
 
 
 // Write a JavaScript program to convert a string to the number.
+const stringToNumber = str => Number(str);
+
+
+// calculator
+
+  const form = document.getElementById('calculatorForm');
+  const resultElement = document.getElementById('result');
+
+  form.addEventListener("submit", e => {
+    e.preventDefault()
+  
+
+    const firstNumber = parseFloat(document.getElementById('first-number').value);
+    const secondNumber = parseFloat(document.getElementById('second-number').value);
+    const operator = document.getElementById('operator').value;
+
+    let result;
+    let message;
+  
+    if (operator === 'add') {
+      result = firstNumber + secondNumber;
+      message = `The sum of ${firstNumber} and ${secondNumber} is <span class="answer">${result}</span>.`;
+    } else if (operator === 'subtract') {
+      result = firstNumber - secondNumber;
+      message = `The difference between ${firstNumber} and ${secondNumber} is <span class="answer">${result}</span>.`;
+    } else if (operator === 'multiply') {
+      result = firstNumber * secondNumber;
+      message = `The product of ${firstNumber} and ${secondNumber} is <span class="answer">${result}</span>.`;
+    } else if (operator === 'divide') {
+      result = firstNumber / secondNumber;
+      message = `The dividend of ${firstNumber} divided by ${secondNumber} is <span class="answer">${result}</span>.`;
+    } else {
+      message = 'Please select an operator';
+    }
+  
+    resultElement.textContent = `Result: ${result}`;
+    resultElement.innerHTML = message;
+  });
+ 
+
+// truthy or falsy
+
+function evaluateItems() {
+  const firstItem = document.getElementById('first-item').value;
+  const secondItem = document.getElementById('second-item').value;
+
+  const firstItemResult = evaluateTruthiness(firstItem);
+  const secondItemResult = evaluateTruthiness(secondItem);
+
+  const outcomeElement = document.getElementById('outcome');
+  outcomeElement.innerHTML = `${firstItem} is ${firstItemResult ? 'truthy' : 'falsy'} and ${secondItem} is ${secondItemResult ? 'truthy' : 'falsy'}.`;
+}
+
+function evaluateTruthiness(value) {
+  return value !== '' && value !== 'null' && value !== 'undefined' && value !== 'false' && value !== '0';
+}
 
 
 

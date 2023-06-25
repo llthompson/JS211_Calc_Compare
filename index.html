@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-    <hr/>
-    <div id="display-element"></div>
-    <button onclick="displayDate()">Click Me</button>
-    <hr/>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Calc & Compare</title>
+</head>
+
+<body>
+  <h1>JavaScript Functions</h1>
+  <hr />
+  <h2>Current Date & Time</h2>
+  <button class="btn" onclick="displayDate()">click me!</button>
+  <div id="display-element"></div>
+
+  <hr />
+  <h2>Calculations</h2>
+
+  <form id="calculatorForm" action="calculator">
+    <p>Choose two numbers to calculate:</p>
+    <input type="number" id="first-number">
+    <input type="number" id="second-number">
+    <select id="operator">
+      <option value="pick" selected disabled>Operator</option>
+      <option value="add">Add</option>
+      <option value="subtract">Subtract</option>
+      <option value="multiply">Multiply</option>
+      <option value="divide">Divide</option>
+    </select>
+    <button class="btn">Calculate</button>
+    <p id="result"></p>
+  </form>
+
+  <hr />
+
+  <h2>Truthy or Falsy</h2>
+  <p>Evaluate two items for truthiness or falsiness:</p>
+  <input type="text" id="first-item">
+  <input type="text" id="second-item">
+  <button class="btn" onclick="evaluateItems()" >Evaluate</button>
+  <p id="outcome"></p>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
