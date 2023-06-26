@@ -4,6 +4,7 @@ body {
     font-weight: 300;
     font-size: 18px;
     color: #646464;
+    text-align: center;
 }
 
 .btn {
@@ -47,4 +48,17 @@ input {
     color: #2f2f2f;
     /* font-size: 20px; */
     font-weight: 700;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: #b50965;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    /* text-shadow: 1px 2px 1px #00000033; */
+    letter-spacing: 2px;
+    text-decoration: none;
 }
